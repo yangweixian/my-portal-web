@@ -1,0 +1,22 @@
+# Dependencies & build
+node_modules
+.next
+out
+build
+dist
+.vercel
+
+# Lock & cache
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+*.tsbuildinfo
+
+# Sanity / generated
+.sanity
+*.min.js
+
+# Misc
+*.md
+!.github/**/*.md
+public

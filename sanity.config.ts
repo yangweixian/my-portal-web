@@ -1,7 +1,7 @@
-import {defineConfig, type SchemaTypeDefinition} from "sanity";
-import {deskTool} from "sanity/desk";
-import {visionTool} from "@sanity/vision";
-import {zhHansLocale} from "@sanity/locale-zh-hans";
+import { defineConfig, type SchemaTypeDefinition } from "sanity";
+import { deskTool } from "sanity/desk";
+import { visionTool } from "@sanity/vision";
+import { zhHansLocale } from "@sanity/locale-zh-hans";
 
 const projectSchema: SchemaTypeDefinition = {
   name: "project",
@@ -33,13 +33,13 @@ const projectSchema: SchemaTypeDefinition = {
       name: "content",
       title: "详情内容",
       type: "array",
-      of: [{type: "block"}],
+      of: [{ type: "block" }],
     },
     {
       name: "tags",
       title: "标签",
       type: "array",
-      of: [{type: "string"}],
+      of: [{ type: "string" }],
       options: {
         layout: "tags",
       },
@@ -53,7 +53,7 @@ if (!projectId) {
   // 在构建/启动阶段提示缺少配置，方便排查
   // 不直接 throw，避免在本地开发时完全阻断，但会在控制台报警告。
   console.warn(
-    "[sanity.config] 缺少 NEXT_PUBLIC_SANITY_PROJECT_ID 环境变量，Sanity Studio 将无法正常连接项目。",
+    "[sanity.config] 缺少 NEXT_PUBLIC_SANITY_PROJECT_ID 环境变量，Sanity Studio 将无法正常连接项目。"
   );
 }
 
@@ -73,4 +73,3 @@ export default defineConfig({
     types: [projectSchema],
   },
 });
-
