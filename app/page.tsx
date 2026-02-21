@@ -211,10 +211,11 @@ export default function Home() {
               <div className="bg-blue-50 border border-blue-100 p-5 rounded-xl">
                 <p className="font-semibold text-gray-800 mb-1">领域经验</p>
                 <p className="text-slate-600 leading-snug">
-                  拥有 7 年+
-                  产品架构与孵化经验，深耕金融科技与企业数字化转型赛道。熟悉从 0
-                  到 1
-                  构筑产品生命周期，能够精准捕捉业务痛点，通过数据驱动与敏捷迭代实现产品商业价值最大化。
+                  拥有 7 年+ 资深产品架构经验，深耕金融科技与 AI
+                  办公赛道。擅长将大模型能力引入企业级协同场景，主导过 AI
+                  智能助理及自动化办公流设计。具备从 0 到 1
+                  定义产品核心路径的能力，能通过精准的场景洞察实现 AI
+                  技术与业务价值的深度耦合。
                 </p>
               </div>
               <div className="bg-slate-50 border border-slate-100 p-5 rounded-xl">
