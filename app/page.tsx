@@ -1,39 +1,6 @@
-"use client";
-import React, { useEffect } from "react";
+import React from "react";
 
-// Type definition for Coze Web SDK on the window object
-interface WebChatClientOptions {
-  config: {
-    bot_id: string;
-  };
-  componentProps: {
-    title: string;
-  };
-  auth: {
-    type: string;
-    token: string;
-    onRefreshToken: () => Promise<string>;
-  };
-  userInfo: {
-    id: string;
-    nickname: string;
-  };
-  ui: {
-    baseCdnUrl: string;
-  };
-}
-
-type WebChatClientInstance = object;
-
-interface CozeWebSDKType {
-  WebChatClient: new (options: WebChatClientOptions) => WebChatClientInstance;
-}
-
-declare global {
-  interface Window {
-    CozeWebSDK: CozeWebSDKType | undefined; // It might not be loaded yet
-  }
-}
+import CozeAgent from "../components/CozeAgent";
 
 // Reusable component for the main content sections
 const Section = ({
@@ -111,48 +78,6 @@ const NestedExperienceItem = ({
 };
 
 export default function Home() {
-  // Coze 悬浮窗暴力注入逻辑 (原生 DOM 方式，确保必现)
-  useEffect(() => {
-    const script = document.createElement("script");
-    script.src =
-      "https://lf-cdn.coze.cn/obj/unpkg/flow-platform/chat-app-sdk/1.2.0-beta.19/libs/cn/index.js";
-    script.async = true;
-
-    script.onload = () => {
-      if (window.CozeWebSDK) {
-        new window.CozeWebSDK.WebChatClient({
-          config: {
-            bot_id: "7608043554447147017",
-          },
-          componentProps: {
-            title: "杨伟贤的 AI 数字分身",
-          },
-          auth: {
-            type: "token",
-            token:
-              "pat_lH62R9GAwZd57PJWN8AY8uwADkzFhRPe0Ydnxt6J6wQisEqfGYRVBAGU07Ajzq0v",
-            onRefreshToken: async () =>
-              "pat_lH62R9GAwZd57PJWN8AY8uwADkzFhRPe0Ydnxt6J6wQisEqfGYRVBAGU07Ajzq0v",
-          },
-          userInfo: {
-            id: "user_interview",
-            nickname: "面试官",
-          },
-          ui: {
-            baseCdnUrl: "https://lf-cdn.coze.cn",
-          },
-        });
-      }
-    };
-    document.body.appendChild(script);
-    // Cleanup function
-    return () => {
-      if (document.body.contains(script)) {
-        document.body.removeChild(script);
-      }
-    };
-  }, []);
-
   return (
     <div className="bg-[#F8F9FA] min-h-screen font-sans text-gray-800">
       <main className="w-[95%] max-w-[1440px] mx-auto py-12 space-y-10">
@@ -295,6 +220,7 @@ export default function Home() {
           </div>
         </div>
       </main>
+      <CozeAgent />
     </div>
   );
 }
