@@ -54,9 +54,9 @@ const CozeAgent: React.FC = () => {
           auth: {
             type: "token",
             token:
-              "pat_lH62R9GAwZd57PJWN8AY8uwADkzFhRPe0Ydnxt6J6wQisEqfGYRVBAGU07Ajzq0v",
+              "pat_cVKBzwa3ji6upMyI0DGqurVNawrGt89J5aaKnzRZXekVU18ZvXpaHtiSHFEHWkfK",
             onRefreshToken: async () =>
-              "pat_lH62R9GAwZd57PJWN8AY8uwADkzFhRPe0Ydnxt6J6wQisEqfGYRVBAGU07Ajzq0v",
+              "pat_cVKBzwa3ji6upMyI0DGqurVNawrGt89J5aaKnzRZXekVU18ZvXpaHtiSHFEHWkfK",
           },
           userInfo: {
             id: "user_interview",
