@@ -23,8 +23,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={`antialiased`}>{children}</body>
+    <html lang="en" suppressHydrationWarning className="h-full">
+      <body className={`antialiased h-full`}>{children}</body>
     </html>
   );
 }
